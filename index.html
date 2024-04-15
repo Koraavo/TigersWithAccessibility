@@ -171,7 +171,7 @@
             <img src="./img/praniket-desai-SLyVj5uz6_I-unsplash.jpeg" alt="" class="more-images-right">
         </section>
 
-        <section class="points">
+        <section class="points" id="animationSection">
             <div class="container-one">
                 <div class="element one">
                     <div class="element-text one">Habitat Loss</div>
@@ -242,6 +242,12 @@
             <a href="./howtohelp.html">HELP NOW</a>
         </div>
     </footer>
+    <script>
+        function toggleAnimation() {
+            let animationSection = document.getElementById("animationSection");
+            animationSection.classList.toggle("red-animation");
+        }
+    </script>
 </body>
 
 </html>
