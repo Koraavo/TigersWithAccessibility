@@ -213,24 +213,24 @@
             <h3 class="footer-small">Join Our Newsletter</h3>
             <p class="footer-header">Sign up with your email address to receive news and updates</p>
 
-            <div class="form__group field">
-                <form action="" method="post" class="formaction">
-                    <input type="email" class="form__field" placeholder="abc@xyz.com" name="email" id='email'
-                        required />
+            <form action="#" method="post" class="formaction" aria-label="Newsletter Signup">
+                <div class="form__group field">
+                    <input type="email" class="form__field" placeholder="abc@xyz.com" name="email" id="email" required>
                     <label for="email" class="form__label"></label>
-                    <button type="submit" id="submit" value="submit">
-                        <i class='bx bx-chevrons-right'></i>
-                        Submit</button>
-                </form>
-            </div>
+                    <button type="submit" id="submit" value="submit" aria-label="Submit">
+                        <i class="bx bx-chevrons-right" aria-hidden="true"></i>
+                        <span class="visually-hidden">Submit</span> <!-- Screen reader only text -->
+                    </button>
+                </div>
+            </form>
         </div>
 
         <div class="foot3">
-            <a href="https://twitter.com/Save_WildTigers" target="_blank">
-                <i class='bx bxl-twitter'></i>
+            <a href="https://twitter.com/Save_WildTigers" target="_blank" aria-label="Save Wild Tigers Twitter Page">
+                <i class='bx bxl-twitter' aria-hidden="true"></i>
             </a>
-            <a href="https://www.facebook.com/savethetigerindia" target="_blank">
-                <i class='bx bxl-facebook'></i>
+            <a href="https://www.facebook.com/savethetigerindia" target="_blank" aria-label="Save Tigers India Facebook Page">
+                <i class='bx bxl-facebook' aria-hidden="true"></i>
             </a>
         </div>
 

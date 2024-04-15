@@ -331,6 +331,18 @@ section {
     animation-play-state: paused;
 }
 
+/* toggle animation button */
+
+.red-animation {
+    display: none;
+}
+
+#toggleAnimationButton {
+    cursor: pointer;
+    padding: .3em;
+    margin: 1em 1em 0 auto;
+}
+
 
 /* more-images */
 
