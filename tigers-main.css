@@ -5,40 +5,42 @@
     --fnt-headline2: 'Space Grotesk', sans-serif;
     --fnt-primary: 'Quicksand', sans-serif;
     --clr-lightgray: lightgray;
-    --clr-black:black;
+    --clr-black: black;
     --clr-urgent: rgb(206, 63, 11);
     --clr-white: white;
 
 
-        /* final clamps for the main header */
+    /* final clamps for the main header */
     --fnt-mainhead-lh: clamp(2.9rem, 8vw, 8rem);
-    --fnt-mainhead: clamp(3.5rem, 10vw, 10rem); 
-    --fnt-extinction: clamp(5rem, 14vw, 14rem); 
-    --fnt-mainhead-fline-position: clamp(-10rem,-10vw,-4rem);
-    --fnt-mainhead-sline-position: clamp(2.2rem,5.5vw,5rem);
-    --fnt-mainhead-tline-position: clamp(1rem,3vw,3rem);
+    --fnt-mainhead: clamp(3.5rem, 10vw, 10rem);
+    --fnt-extinction: clamp(5rem, 14vw, 14rem);
+    --fnt-mainhead-fline-position: clamp(-10rem, -10vw, -4rem);
+    --fnt-mainhead-sline-position: clamp(2.2rem, 5.5vw, 5rem);
+    --fnt-mainhead-tline-position: clamp(1rem, 3vw, 3rem);
 
 
     /* 100 years */
     --fnt-100-lh: clamp(5rem, 14vw, 14rem);
-    --fnt-hundred: clamp(10rem,28vw,30rem);
-    --fnt-years: clamp(2.5rem,8vw,8rem);
+    --fnt-hundred: clamp(10rem, 28vw, 30rem);
+    --fnt-years: clamp(2.5rem, 8vw, 8rem);
 
 
     /* box with text */
-    --box-width: clamp(10vw,70vw,60rem);
+    --box-width: clamp(10vw, 70vw, 60rem);
     --box-height: auto;
     --fnt-insidebox: clamp(2rem, 8vw, 8rem);
-    
+
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
     /* border: 1px solid red; */
-    
+
 }
 
 html {
@@ -50,7 +52,7 @@ html {
 
 body {
     font-size: 1.6rem;
-    background-color: var(--clr-lightgray);    
+    background-color: var(--clr-lightgray);
 }
 
 body a {
@@ -76,12 +78,13 @@ section {
     width: 80%;
     max-width: 95%;
     margin: 10rem auto;
-    
+
 }
 
-.header, .home {
+.header,
+.home {
     font-family: var(--fnt-primary);
-    text-transform:uppercase;
+    text-transform: uppercase;
     font-weight: 700;
 }
 
@@ -97,7 +100,7 @@ section {
     left: 90%;
     cursor: pointer;
     padding: 1rem;
-    font-size: 2rem;    
+    font-size: 2rem;
 }
 
 .menu a {
@@ -231,8 +234,9 @@ section {
     padding: 1rem;
     transition: right .1s ease;
     display: block;
-    
+
 }
+
 .news-list li a:hover,
 .news-list li a:focus,
 .news-list li a:active {
@@ -307,7 +311,7 @@ section {
     100% {
         transform: translateX(calc(-25rem * 7));
     }
-    
+
 }
 
 .slide .bxs-circle {
@@ -383,10 +387,10 @@ section {
     justify-content: space-evenly;
     align-items: center;
     gap: 10rem;
-    grid-template-areas: 
-    "footImage Newsletter socialMedia"
-    "copyRight copyRight helpNow"; 
-    overflow: hidden;   
+    grid-template-areas:
+        "footImage Newsletter socialMedia"
+        "copyRight copyRight helpNow";
+    overflow: hidden;
     color: var(--clr-white);
 }
 
@@ -399,7 +403,7 @@ section {
 
 .footer-image {
     background: url(./img/film-damage-grain.gif);
-    mix-blend-mode:difference;
+    mix-blend-mode: difference;
     width: 30rem;
     height: 20rem;
     border-radius: 1rem;
@@ -454,7 +458,7 @@ section {
 .help {
     grid-area: helpNow;
     text-align: end;
-    
+
 }
 
 .footer-small {
@@ -486,78 +490,78 @@ section {
 
 .form__field::placeholder {
     color: transparent;
-  }
+}
 
 
-  .form__label {
+.form__label {
     display: block;
     transition: 0.2s;
     font-size: 1rem;
     color: gray;
-  }
-  
-  .form__field:focus ~ .form__label{
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      font-size: 1rem;
-      color: var(--clr-lightgray);
-      font-weight:700;    
-      padding-bottom: 6px;  
-      font-weight: 700;
-      border-width: 3px;
-      border-image-slice: 1;
-    }
-    
-  /* reset input */
-  .form__field:invalid {
-      box-shadow: none;
-  }
+}
 
-  button {
-      display: flex;
-      align-items: center;
-  }
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: var(--clr-lightgray);
+    font-weight: 700;
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image-slice: 1;
+}
 
-  #submit {
-      /* padding: 1rem 5rem; */
-      border: none;
-      background: transparent;
-      color: var(--clr-lightgray);
-      text-transform: uppercase;
-      cursor: pointer;
-      border-bottom: 2px solid gray;
-  }
+/* reset input */
+.form__field:invalid {
+    box-shadow: none;
+}
 
-  #submit::before {
-      content: '|';
-      font-size: 3rem;
+button {
+    display: flex;
+    align-items: center;
+}
 
-  }
+#submit {
+    /* padding: 1rem 5rem; */
+    border: none;
+    background: transparent;
+    color: var(--clr-lightgray);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-bottom: 2px solid gray;
+}
 
-  .form__group i {
+#submit::before {
+    content: '|';
+    font-size: 3rem;
+
+}
+
+.form__group i {
     color: goldenrod;
     font-size: 5rem;
     cursor: pointer;
-  }
+}
 
-  /* Text and dot animation */
+/* Text and dot animation */
 
-  .points {
-      text-transform: uppercase;
-  }
+.points {
+    text-transform: uppercase;
+}
 
-  .element {
-      width: 20rem;
-      height: 4rem;
-      border-radius: 1rem;
-      background: var(--clr-urgent);
-      animation: scaling 10s infinite reverse;
-      overflow: hidden;
-  }
+.element {
+    width: 20rem;
+    height: 4rem;
+    border-radius: 1rem;
+    background: var(--clr-urgent);
+    animation: scaling 10s infinite reverse;
+    overflow: hidden;
+}
 
-  .visually-hidden {
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -568,8 +572,8 @@ section {
     border: 0;
 }
 
-  @keyframes scaling {
-        
+@keyframes scaling {
+
     0% {
         border-radius: 50%;
         transform: scale(0.05, 0.25);
@@ -579,44 +583,44 @@ section {
         border-radius: 1rem;
     }
 
-    20%{
+    20% {
         transform: scale(1, 1);
-      }
+    }
 
-    40%{
+    40% {
         border-radius: 1rem;
         transform: scale(1, 1);
-      }
+    }
 
-    60%{
+    60% {
         transform: scale(1, 1);
         border-radius: 1rem;
-      }
+    }
 
     75% {
         transform: scale(0.05, 0.25);
         opacity: 1;
-        border-radius: 50%; 
-      }
+        border-radius: 50%;
+    }
 
     100% {
         transform: scale(0.05, 0.25);
         opacity: 1;
-        border-radius: 50%; 
-      }
-  }
+        border-radius: 50%;
+    }
+}
 
 
-  .element-text {
-      text-align: center;
-      color: white;
-      position: relative;
-      top: 1.5rem;
-      animation: move-text 10s infinite forwards;
-  }
+.element-text {
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 1.5rem;
+    animation: move-text 10s infinite forwards;
+}
 
 
-  @keyframes move-text {
+@keyframes move-text {
     0% {
         opacity: 0;
     }
@@ -630,24 +634,24 @@ section {
         transform: translate(0, 80%);
     }
 
-    40%{
+    40% {
         opacity: 1;
         transform: translate(0, 0);
     }
 
-    80%{
+    80% {
         opacity: 1;
     }
 
-    85%{
+    85% {
         opacity: 0;
     }
 
-    100%{
+    100% {
         opacity: 0;
     }
 
-  }
+}
 
 .one {
     animation-delay: 5s;
@@ -655,19 +659,19 @@ section {
 
 .two {
     animation-delay: 9s;
-  }
+}
 
 .three {
-      animation-delay: 13s;
-  }
+    animation-delay: 13s;
+}
 
 .four {
-      animation-delay: 15s;
-  }
+    animation-delay: 15s;
+}
 
 .five {
-      animation-delay: 20s;
-  }
+    animation-delay: 20s;
+}
 
 .container-one {
     position: absolute;
@@ -675,9 +679,9 @@ section {
 }
 
 .container-two {
-        position: absolute;
-        top: 60%;
-        left: 5%;
+    position: absolute;
+    top: 60%;
+    left: 5%;
 }
 
 .container-three {
@@ -700,17 +704,17 @@ section {
 
 
 
-  
 
 
 
 
 
-  /* mobile version */
 
-@media (max-width:1040px){
-    
-    body{
+/* mobile version */
+
+@media (max-width:1040px) {
+
+    body {
         max-width: 95%;
         margin: auto;
     }
@@ -719,10 +723,10 @@ section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: 
-        "socialMedia socialMedia"
-        "Newsletter Newsletter"
-        "copyRight helpNow";
+        grid-template-areas:
+            "socialMedia socialMedia"
+            "Newsletter Newsletter"
+            "copyRight helpNow";
     }
 
     .foot1 {
@@ -741,14 +745,14 @@ section {
         display: block;
     }
 
-    
+
 
 }
 
 @media (max-width:780px) {
 
     .stripes {
-        padding: 0 1rem; 
+        padding: 0 1rem;
     }
 
     .about-subhead {
