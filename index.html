@@ -7,7 +7,7 @@
         client_key: "nvnfhmuvilarv7mzcp8nfz1r"
     };
     /* OPTIONAL: email for identify request*/
-    // window.sib.email_id = 'example@domain.com';
+    window.sib.email_id = email;
     window.sendinblue = {};
     for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
     (function(k) {
@@ -281,6 +281,40 @@
             animationSection.classList.toggle("red-animation");
         }
     </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector('.formaction'); // Select the form
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const email = document.getElementById('email').value; // Get the email from the form
+
+        // Validate the email
+        if (email.includes('@') && email.includes('.')) {
+            // Check if Brevo tracker is loaded
+            if (window.sib) {
+                // Set the email_id in Brevo tracker
+                window.sib.email_id = email;
+                console.log(`User identified with email: ${email}`);
+                
+                // Optionally display a success message
+                alert("Thank you for subscribing! You are now identified.");
+            } else {
+                console.error("Brevo tracker is not loaded. Please ensure the script is properly included.");
+            }
+
+            // Optionally reset the form
+            form.reset();
+        } else {
+            // Alert the user if email validation fails
+            alert("Please enter a valid email address.");
+        }
+    });
+});
+</script>
+
 </body>
 
 </html>
