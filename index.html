@@ -24,7 +24,7 @@
                     "ma_path": "/home"
                 } /* optional */
             ]);
-
+        
             // // Event tracking
             // Brevo.push([
             //     "track",
@@ -40,6 +40,14 @@
             //     }
             // ]);
         };
+
+        Brevo.push(function () {
+            Brevo.identify({
+              identifiers: {
+                email_id: email // Replace with the actual dynamic email variable in GTM
+              },
+    });
+  });
     </script>
 <head>
     <meta charset="UTF-8">
