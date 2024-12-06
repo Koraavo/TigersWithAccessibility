@@ -3,52 +3,76 @@
 <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
 
     <script type="text/javascript">
-        // Version: 2.0
-        window.Brevo = window.Brevo || [];
-        Brevo.push([
-            "init",
-            {
-                client_key: "nvnfhmuvilarv7mzcp8nfz1r",
-                // Optional: Add other initialization options, see documentation
+    // Initialize Brevo SDK
+    window.Brevo = window.Brevo || [];
+    Brevo.push([
+        "init",
+        {
+            client_key: "nvnfhmuvilarv7mzcp8nfz1r", // Your tracking key
+            // Optional: Add other initialization options, see documentation
+        }
+    ]);
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Add form submission event listener
+        const form = document.querySelector('.formaction'); // Select the form
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the email value from the form
+            const email = document.getElementById('email').value;
+
+            // Validate the email format
+            if (email.includes('@') && email.includes('.')) {
+                // Identify the user in Brevo
+                Brevo.push(function () {
+                    Brevo.identify({
+                        identifiers: {
+                            email_id: email // Set the dynamic email
+                        }
+                    });
+                });
+
+                console.log(`User identified with email: ${email}`);
+
+                // Optional: Display a success message or reset the form
+                alert("Thank you for subscribing!");
+                form.reset();
+            } else {
+                alert("Please enter a valid email address.");
             }
+        });
+
+        // Page tracking
+        Brevo.push([
+            "page",
+            "homepage", /* mandatory */
+            {
+                "ma_title": "My Home Page",
+                "ma_url": "https://koraavo.github.io/TigersWithAccessibility/",
+                "ma_path": "/home"
+            } /* optional */
         ]);
 
-        window.onload = function() {
-            // Page tracking
-            Brevo.push([
-                "page",
-                "homepage", /* mandatory */
-                {
-                    "ma_title": "My Home Page",
-                    "ma_url": "https://koraavo.github.io/TigersWithAccessibility/",
-                    "ma_path": "/home"
-                } /* optional */
-            ]);
+        // Optional: Event tracking (uncomment and modify as needed)
+        /*
+        Brevo.push([
+            "track",
+            "order_completed", /* mandatory */
+        //     {
+        //         "email": "aayurshi@brevo.com" // Example email
+        //     },
+        //     {
+        //         "data": {
+        //             "category": "true",
+        //             "site_ai": "true"
+        //         }
+        //     }
+        // ]);
         
-            // // Event tracking
-            // Brevo.push([
-            //     "track",
-            //     "order_completed", /* mandatory */
-            //     {
-            //         "email": "aayurshi@brevo.com"
-            //     },
-            //     {
-            //         "data": {
-            //             "category" : "true",
-            //             "site_ai": "true"
-            //         }
-            //     }
-            // ]);
-        };
-
-        Brevo.push(function () {
-            Brevo.identify({
-              identifiers: {
-                email_id: email // Replace with the actual dynamic email variable in GTM
-              },
-    });
-  });
-    </script>
+    // });
+</script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -304,39 +328,6 @@
             animationSection.classList.toggle("red-animation");
         }
     </script>
-
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector('.formaction'); // Select the form
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        const email = document.getElementById('email').value; // Get the email from the form
-
-        // Validate the email
-        if (email.includes('@') && email.includes('.')) {
-            // Check if Brevo tracker is loaded
-            if (window.sib) {
-                // Set the email_id in Brevo tracker
-                window.sib.email_id = email;
-                console.log(`User identified with email: ${email}`);
-                
-                // Optionally display a success message
-                alert("Thank you for subscribing! You are now identified.");
-            } else {
-                console.error("Brevo tracker is not loaded. Please ensure the script is properly included.");
-            }
-
-            // Optionally reset the form
-            form.reset();
-        } else {
-            // Alert the user if email validation fails
-            alert("Please enter a valid email address.");
-        }
-    });
-});
-</script>
 
 </body>
 
