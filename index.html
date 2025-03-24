@@ -88,16 +88,23 @@
     <button id="toggleAnimationButton" onclick="toggleAnimation()">Hide Animation</button>
 
     <!-- Greeting -->
-    <h1>Welcome, <span id="username">Guest</span>!</h1>
-
-    <!-- Modal -->
-    <div id="nameModal">
+    <!-- Name Input Modal -->
+    <div id="nameModal" class="modal">
         <div class="modal-content">
             <p>What's your name?</p>
             <input type="text" id="nameInput" placeholder="Enter your name">
             <button onclick="saveName()">Submit</button>
         </div>
     </div>
+
+    <!-- Greeting Modal -->
+    <div id="greetingModal" class="modal">
+        <div class="modal-content">
+            <p id="greetingText"></p>
+            <button onclick="closeGreeting()">OK</button>
+        </div>
+    </div>
+
 
     
     <header class="header">
