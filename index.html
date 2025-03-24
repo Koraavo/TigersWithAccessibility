@@ -86,6 +86,20 @@
 
 <body>
     <button id="toggleAnimationButton" onclick="toggleAnimation()">Hide Animation</button>
+
+    <!-- Greeting -->
+    <h1>Welcome, <span id="username">Guest</span>!</h1>
+
+    <!-- Modal -->
+    <div id="nameModal">
+        <div class="modal-content">
+            <p>What's your name?</p>
+            <input type="text" id="nameInput" placeholder="Enter your name">
+            <button onclick="saveName()">Submit</button>
+        </div>
+    </div>
+
+    
     <header class="header">
         <nav aria-label="Main" class="menu">
             <ul class="menu-list">
@@ -326,6 +340,25 @@
             let animationSection = document.getElementById("animationSection");
             animationSection.classList.toggle("red-animation");
         }
+
+        function saveName() {
+            const name = document.getElementById("nameInput").value.trim();
+            if (name) {
+                localStorage.setItem("username", name);  // Store in localStorage
+                document.getElementById("username").textContent = name;  // Update greeting
+                document.getElementById("nameModal").style.display = "none";  // Hide modal
+            }
+        }
+
+        // Show modal only if there's no name saved
+        window.onload = function () {
+            const savedName = localStorage.getItem("username");
+            if (savedName) {
+                document.getElementById("username").textContent = savedName;
+            } else {
+                document.getElementById("nameModal").style.display = "block";
+            }
+        };
     </script>
 
 </body>
