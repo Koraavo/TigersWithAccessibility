@@ -723,7 +723,7 @@ button {
 
         /* Modal content */
         .modal-content {
-            background-color: red;
+            background-color: grey;
             color: white;
             padding: 20px;
             border-radius: 12px;
