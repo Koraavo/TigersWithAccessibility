@@ -351,19 +351,28 @@
         function saveName() {
             const name = document.getElementById("nameInput").value.trim();
             if (name) {
-                localStorage.setItem("username", name);  // Store in localStorage
-                document.getElementById("username").textContent = name;  // Update greeting
-                document.getElementById("nameModal").style.display = "none";  // Hide modal
+                localStorage.setItem("username", name);  // Store name in localStorage
+                document.getElementById("nameModal").style.display = "none";  // Hide name modal
+                showGreeting(name);  // Show greeting modal
             }
         }
 
-        // Show modal only if there's no name saved
+        function showGreeting(name) {
+            document.getElementById("greetingText").textContent = `Welcome, ${name}!`;
+            document.getElementById("greetingModal").style.display = "flex";
+        }
+
+        function closeGreeting() {
+            document.getElementById("greetingModal").style.display = "none";
+        }
+
+        // Show name modal only if no name is saved
         window.onload = function () {
             const savedName = localStorage.getItem("username");
             if (savedName) {
-                document.getElementById("username").textContent = savedName;
+                showGreeting(savedName);  // If name exists, show greeting modal
             } else {
-                document.getElementById("nameModal").style.display = "block";
+                document.getElementById("nameModal").style.display = "flex";  // Otherwise, ask for name
             }
         };
     </script>
